@@ -1,12 +1,12 @@
 const path = require('path')
 
 module.exports = {
-entry: './src/index.ts',
+entry: './src/index.tsx',
     module: {
         // webpack に対してビルド時に追加で行う処理
         rules: [
         {
-            test: /\.ts$/,
+            test: /\.tsx?$/,
             use: 'ts-loader',
             exclude: /node_modules/,
         },
@@ -14,7 +14,7 @@ entry: './src/index.ts',
     },
     // モジュールとして解決するファイルの拡張子を指定
     resolve: {
-        extensions: ['.ts'],
+        extensions: ['.js', '.ts', '.tsx'],
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
